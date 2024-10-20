@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('pexels-shivam-_-798721.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: auto;
+}
+
+.header-title {
+  margin-top: 50px;
+  font-size: 100px; 
+  color: teal;
+  background-color: rgba(252, 252, 252, 0.5);
+  text-transform: uppercase;
+  animation: fadeIn 5s; 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.card-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
+  margin-top: auto;
+}
+
+.card {
+  width: calc(33.33% - 40px);
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-content {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(175, 202, 141, 0.8);
+  color: #fff;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-content::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  transform: translateX(-50%);
+  transition: height 0.3s ease;
+}
+
+.card-content::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 5px);
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  transform: translateX(-50%);
+  transition: height 0.3s ease;
+}
+
+.card-content .extra-info {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .extra-info {
+  display: block;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto;
+}
+
+.signup-btn {
+  background-color: #FFF8DC;
+  color:cadetblue;
+}
+.button a{
+  color: inherit; /* Inherit color from parent element */
+  text-decoration: none;
+}
+
+
+.input-field {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+  .card {
+      width: calc(50% - 40px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+      width: calc(100% - 40px);
+  }
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button:hover + .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+.dropdown-content input,
+.dropdown-content button {
+  display: block;
+  margin: 10px auto;
+}
