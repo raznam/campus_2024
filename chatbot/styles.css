@@ -1,0 +1,248 @@
+* {
+    font-size: 1.3vw;
+    font-family: "Epilogue", sans-serif;
+  }
+  
+  html {
+    --scrollbarBG: #fffcfc;
+    --thumbBG: #828282;
+  }
+  
+  body {
+    background: #F5F5DC;
+  }
+  body .card {
+    height: 45vw;
+    width: 35vw;
+    background-color: rgb(248, 248, 248);
+    margin-left: 30vw;
+    margin-top: 5vw;
+    box-shadow: 2vw 2vw 12vw 3vw #a9c77c;
+  }
+  body .card #header {
+    height: 5vw;
+    background: #004849; 
+    padding: 0vw;
+  }
+  body .card #header h1 {
+    color: #ffffff;
+    font-size: 2vw;
+    font-family: "Finger Paint", cursive;
+    padding: 1vw;
+  }
+  body .card #message-section::-webkit-scrollbar {
+    width: 10px;
+  }
+  body .card #message-section {
+    height: 32vw;
+    padding: 0 2.5vw;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body .card #message-section::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body .card #message-section::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+  body .card #message-section #bot,
+  body .card #message-section #user {
+    position: relative;
+    bottom: 0;
+    min-height: 1.5vw;
+    border: 0.15vw solid #000000;
+    background-color: #fff;
+    border-radius: 0px 1.5vw 1.5vw 1.8vw;
+    padding: 1vw;
+    margin: 1.5vw 0;
+  }
+  body .card #message-section #user {
+    border: 1.5px solid #000;
+    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+    background-color: teal;
+    float: right;
+  }
+  body .card #message-section #user #user-response {
+    color: #000000;
+  }
+  body .card #message-section .message {
+    color: #000000;
+    clear: both;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
+    padding: 8px;
+    position: relative;
+    margin: 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: 2;
+  }
+  body .card #input-section {
+    z-index: 1;
+    padding: 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 6vw;
+    width: 100%;
+  }
+  body .card #input-section input {
+    color: #000000;
+    min-width: 0.5vw;
+    outline: none;
+    height: 5vw;
+    width: 26vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000 0.1vw;
+  }
+  body .card .send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: 1.4vw;
+    margin-right: 0vw;
+    padding: 0;
+    position: relative;
+    outline: none;
+  }
+  body .card .send .circle {
+    position: relative;
+    width: 4.8vw;
+    height: 4.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body .card .send .circle i {
+    font-size: 3vw;
+    margin-left: -1vw;
+    margin-top: 1vw;
+  }
+
+  /* Resetting default margin and padding for better appearance */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#t {
+    color: teal;
+    background-color:#F5F5DC;
+    padding: 10px; /* Add padding for better readability */
+}
+
+
+header {
+    background-color: teal;
+    color: white;
+    
+    font-size: 30px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+header h1 a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease; /* Adding transition for smooth hover effect */
+}
+
+/* Hover effect on "My Header" text */
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Adding transition for smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Change color on hover */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+section {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #DAA06D;
+}
+
+.course {
+    background-color: #FAF9F6;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.course h3 {
+    margin-top: 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container{
+    display:flex;
+}
+
+#Learn,#Roadmap{
+    width:50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+li {
+    font-size: 16px; /* Initial font size */
+    transition: font-size 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for list items */
+li:hover {
+    font-size: 18px; /* Increase font size by 2 pixels on hover */
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height:40px;
+}
+
