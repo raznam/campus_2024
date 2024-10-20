@@ -1,0 +1,93 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+  select {
+    width: 35%;
+  }
+  
+  .phone-input {
+    display: flex;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: teal;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #004849;
+  }
+  
+  .required {
+    color: red;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .form-control {
+      margin-bottom: 15px;
+    }
+    input[type="submit"] {
+      font-size: 14px;
+    }
+  
+  }
+  footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  

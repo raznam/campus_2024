@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Signup Page</title>
+  <link rel="stylesheet" href="page2.css.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form action="#" method="POST">
+      <div class="form-control">
+        <label for="firstname">First Name *</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
+      <div class="form-control">
+        <label for="lastname">Last Name *</label>
+        <input type="text" id="lastname" name="lastname" required>
+      </div>
+      <div class="form-control">
+        <label for="username">Username *</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-control">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-control">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-control">
+        <label for="college">College Name *</label>
+        <input type="text" id="college" name="college" required>
+        <span class="required">*</span> <!-- Star mark for compulsory field -->
+      </div>
+      <div class="form-control">
+        <label for="phone">Phone Number *</label>
+        <div class="phone-input">
+          <select id="country-code" name="country-code">
+            <option value="+1">+1 (United States)</option>
+            <option value="+44">+44 (United Kingdom)</option>
+            <option value="+91">+91 (India)</option>
+            <!-- Add more country codes as needed -->
+          </select>
+          <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+      </div>
+      <input type="submit" value="Sign Up">
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2024 Campus. All rights reserved.</p>
+  </footer>
+</body>
+</html>
