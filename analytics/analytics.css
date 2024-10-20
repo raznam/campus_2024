@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+  }
+  
+header {
+    background-color:teal;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    height:20px;
+}
+
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-content: center;
+    background-color:lavender;
+  }
+  .chart-container {
+    display: flex;
+    background-color: seashell;
+    width:900px;
+    height:450px;
+  }
+  
+  .chart {
+    flex: 1;
+    margin-right: 20px;
+    width:300px;
+    height:300px; /* Adjust spacing between charts */
+  }
+  @keyframes clockAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .user-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pie-chart-container {
+    background-color: #f0f0f0; /* Change to your desired background color */
+  }
+  
+  .graph-container {
+    background-color: #e0e0e0; /* Change to your desired background color */
+  }
+  
+  
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .user {
+    margin-bottom: 20px;
+  }
+  
+  .user h2 {
+    margin-bottom: 10px;
+  }
+  
+  .user-stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+  }
+  
+  .user-stats .user {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-stats .user:nth-child(even) {
+    background-color: antiquewhite;
+  }
+  .user-stats .user:nth-child(odd) {
+    background-color: lightcyan;
+  }
+  
