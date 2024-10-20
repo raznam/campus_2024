@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Campus</h1>
+            <p>Your Health, Our Priority</p>
+        </div>
+    </header>
+    <div id="container">
+        <h2>BMI Calculator</h2>
+        <label for="height">Enter your height (in cm):</label><br>
+        <input type="text" id="height" placeholder="Height (cm)" maxlength="3" onkeypress="return isNumber(event)"><br>
+        <label for="weight">Enter your weight (in kg):</label><br>
+        <input type="text" id="weight" placeholder="Weight (kg)" maxlength="3" onkeypress="return isNumber(event)"><br>
+        <input type="button" value="Calculate BMI" id="calculateButton">
+        <div id="result">
+            <p id="bmiValue"></p>
+            <p id="message"></p>
+        </div>
+        
+    </div>
+    <div id="goalContainer">
+        <label for="goal">Set your goal weight (in kg):</label><br>
+        <input type="number" id="goal" placeholder="Goal Weight (kg)" min="0" step="0.1"><br>
+    </div>
+    <div id="generateButton" class="footer-button">
+        <input type="button" value="Generate" onclick="navigateToPage()">
+    </div>
+    <script>
+        function navigateToPage() {
+          // Change the URL to the HTML file you want to navigate to
+          window.location.href = "models/muscle_list.html";
+        }
+      </script>
+    
+        <footer>
+            <p>&copy; 2024 Campus . All rights reserved.</p>
+        </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
