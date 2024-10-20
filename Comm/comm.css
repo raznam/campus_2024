@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#generateButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #459347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#generateButton:hover {
+    background-color: #316033;
+}
+
+#topicContainer {
+    margin-top: 20px;
+    display:none;
+    align-items: center;
+    padding-left: 25%;
+}
+
+#topicTitle {
+    font-size: 24px;
+}
+
+#hintsList {
+   font-size: 18px;
+    padding: 5px;
+    width: 800px; /* Set the width of the list container */
+    height:1200px;
+    word-wrap: break-word;
+    list-style-type: none;
+   
+    
+}
+
+#hintsList li {
+    font-size: 18px;
+    background-color: bisque;
+}
+header {
+    background-color: teal;
+    color: white;
+    padding: 20px;
+    display: flex;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+header h1 a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Adding transition for smooth hover effect */
+}
+#sk{
+    text-decoration: dotted;
+    background-color: bisque;
+    width:600px;
+    height:60px;
+    margin-left: 30%;
+    align-items: center;
+    padding-top: 10px;
+}
+#videoCallButton {
+    position: fixed;
+    bottom: -120px; /* Initially off-screen */
+    right: 20px;
+    background-color: #459347;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 106px;
+    height: 106px;
+    font-size: 24px;
+    background-image: url('icons8.png');
+    cursor: pointer;
+    transition: bottom 0.5s ease; /* Transition for smooth animation */
+}
+
+#videoCallButton i {
+    margin-top: 8px; /* Adjust the position of the icon */
+}
+
+#videoCallButton:hover {
+    background-color: #316033;
+}
+
+#topicContainer {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+    /* Other styling for the topic container */
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 1px;
+    
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Meeting</title>
+    <style>
+        body {
+            background-color: bisque; /* Set body background color to beige */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        #videosContainer {
+            display: flex; /* Use flexbox to position videos horizontally */
+            justify-content: space-between; /* Evenly distribute videos */
+            
+        }
+
+        #localVideo, #remoteVideo {
+            width: 48%; /* Adjust width for each video */
+            height: auto;
+            border: 2px solid black;
+        }
+
+        #shareLinkButton {
+            background-color: #001E00;
+            color: whitesmoke;
+            border: none;
+            padding: 10px 20px;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-left: 250px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px; /* Add border-radius to make it circular */
+        }
+
+        #shareLinkButton:hover {
+            background-color: teal;
+            font-size: 20px; /* Change background color on hover */
+        }
+
+        .circularButton {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make the button circular */
+            background-color: rgb(1, 166, 166);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-left: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .circularButton:hover {
+            background-color: #001E00; /* Change background color on hover */
+        }
+        header {
+    background-color: teal;
+    color: white;
+    padding: 20px;
+    display: flex;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    
+}
+
+
+header h1 a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Adding transition for smooth hover effect */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="#">Campus</a></h1>
+    </header>
+    <h1>Video Meeting</h1>
+    <div id="videosContainer">
+        <video id="localVideo" autoplay muted></video>
+        <video id="remoteVideo" autoplay></video>
+    </div>
+    <div>
+        <button id="pauseVideoButton" class="circularButton"><img src="no-video.png" alt=""></button>
+        <button id="pauseAudioButton" class="circularButton"><img src="no-audio.png" alt=""></button>
+    </div>
+    <button id="shareLinkButton">Copy Meeting Link</button>
+    <div id="meetingLink"></div>
+    
+    <script>
+        var peerConnection;
+
+        // Get user's media (video and audio)
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function(stream) {
+                var localVideo = document.getElementById('localVideo');
+                localVideo.srcObject = stream;
+                
+                peerConnection = new RTCPeerConnection();
+                
+                // Add local stream to peer connection
+                stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
+                
+                // Listen for remote stream
+                peerConnection.ontrack = function(event) {
+                    var remoteVideo = document.getElementById('remoteVideo');
+                    remoteVideo.srcObject = event.streams[0];
+                };
+                
+                // Offer SDP to establish connection
+                peerConnection.createOffer()
+                    .then(offer => peerConnection.setLocalDescription(offer))
+                    .then(function() {
+                        // Send offer to signaling server (could be WebSocket, HTTP request, etc.)
+                        // In this example, we'll just log the offer to console
+                        console.log('Offer:', peerConnection.localDescription);
+                    });
+            })
+            .catch(function(error) {
+                console.error('Error accessing media devices:', error);
+            });
+
+        // Generate sharable link
+        document.getElementById('shareLinkButton').addEventListener('click', function() {
+            if (!peerConnection || !peerConnection.localDescription) {
+                console.error('No peer connection established.');
+                return;
+            }
+            var link = document.createElement('a');
+        link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(peerConnection.localDescription.sdp);
+        link.download = 'meeting_link.txt';
+            // Copy link to clipboard
+            navigator.clipboard.writeText(link.href).then(function() {
+                alert('Link copied!');
+            }).catch(function(error) {
+                console.error('Error copying link to clipboard:', error);
+            });
+        });
+
+        // Pause video button functionality
+        document.getElementById('pauseVideoButton').addEventListener('click', function() {
+            var localStream = document.getElementById('localVideo').srcObject;
+            localStream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
+            if (localStream.getVideoTracks()[0].enabled) {
+                document.getElementById('pauseVideoButton').textContent = 'PV';
+            } else {
+                document.getElementById('pauseVideoButton').textContent = 'RV';
+            }
+        });
+
+        // Pause audio button functionality
+        document.getElementById('pauseAudioButton').addEventListener('click', function() {
+            var localStream = document.getElementById('localVideo').srcObject;
+            localStream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
+            if (localStream.getAudioTracks()[0].enabled) {
+                document.getElementById('pauseAudioButton').textContent = 'PA';
+            } else {
+                document.getElementById('pauseAudioButton').textContent = 'RA';
+            }
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Campus . All rights reserved.</p>
+    </footer>
+</body>
+</html>
