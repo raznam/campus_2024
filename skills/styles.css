@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #F5F5DC;
+}
+
+
+header {
+    background-color: teal;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-toggle {
+    order: 2;
+}
+
+h1 {
+    order: 1;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.card {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+.dark-theme {
+    background-color: #090909;
+    color: #fff;
+}
+
+.dark-theme .card {
+    background-color: #1e1427;
+    color: #b4aee8;
+}
+
+.dark-theme .theme-toggle {
+    background-color: #fff;
+    color: #333;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .card {
+        width: calc(100% - 40px);
+    }
+}
+
+
+footer {
+    background-color: #141414;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #fff;
+    margin-bottom: 10px;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    margin-right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+}
+
+.theme-toggle:hover {
+    background-color: #222; 
+    transform: scale(1.05); 
+}
